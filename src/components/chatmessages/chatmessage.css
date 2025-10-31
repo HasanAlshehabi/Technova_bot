@@ -1,6 +1,16 @@
-.msg { display: flex; margin: 6px 0; }
-.msg.left { justify-content: flex-start; }
-.msg.right { justify-content: flex-end; }
+.msg { 
+  display: flex; 
+  margin: 6px 0; 
+}
+
+.msg.left { 
+  justify-content: flex-start;
+}
+
+.msg.right { 
+  justify-content: flex-end; 
+}
+
 .bubble {
   max-width: 70ch;
   background: #f4f4f4;
@@ -9,4 +19,8 @@
   padding: 10px 12px;
   white-space: pre-wrap;
 }
-.msg.right .bubble { background: #1b1b1b; color: white; }
+
+.msg.right .bubble { 
+  background: #1b1b1b; 
+  color: white; 
+}
