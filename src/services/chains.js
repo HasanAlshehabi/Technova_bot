@@ -3,12 +3,12 @@ import { StringOutputParser } from "@langchain/core/output_parsers";
 import { chat } from "./llm.js";
 import { retrieve } from "./retriever.js";
 import { supportPrompt } from "./prompts.js";
-import {isInDomain,docsToContext,historyToText,stripAnyModelSources,buildSources,} from "./ragUtils.js";
+import {isAllowed,docsToContext,historyToText,stripAnyModelSources,buildSources,} from "./ragUtils.js";
 
 export async function answerQuestion(question, opts = {}) {
   const { history = [] } = opts;
 
-  if (!isInDomain(question)) {
+  if (!isAllowed(question)) {
     return {
       answer:
         "Jag kan inte hjälpa till med den frågan. Jag besvarar endast frågor relaterade till TechNova AB:s produkter, leveranser, garantier och policydokument.",
