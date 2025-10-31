@@ -10,7 +10,7 @@ export const ALLOWED_WORDS = [
   "miljö","hållbarhet","återvinning","emballage","greentech"
 ];
 
-export function isInDomain(text = "") {
+export function isAllowed(text = "") {
   const s = text.toLowerCase();
   return ALLOWED_WORDS.some(w => s.includes(w));
 }
