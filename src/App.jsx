@@ -10,7 +10,7 @@ export default function App() {
   return (
     <main className="app">
       <div className="header">
-        <h1>TechNova Kundtjänst</h1>
+        <h1>TechNova Support</h1>
       </div>
 
       <section className="panel">

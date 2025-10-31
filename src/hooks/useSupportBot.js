@@ -1,5 +1,6 @@
 import { useState } from "react";
-import { answerQuestion, parseUsedLabels } from "../services/chains";
+import { answerQuestion } from "../services/chains";
+import { parseUsedLabels } from "../services/ragUtils";
 
 function onlyUsedCitations(citations = [], labels = []) {
   if (!labels.length) return citations;
