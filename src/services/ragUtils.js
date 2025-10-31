@@ -15,7 +15,7 @@ export function isInDomain(text = "") {
   return ALLOWED_WORDS.some(w => s.includes(w));
 }
 
-
+// man väljer sektionstitlar baserat på nyckelord i texten
 export function pickSectionTitleFromText(text = "") {
   const s = text.toLowerCase();
   if (/(garanti|tillverkningsfel|vattenskador|vattenskada|fysiska skador|reservdel|laddare|batteri|kabel|novatech|quantumgear)/.test(s)) 
@@ -45,10 +45,12 @@ export function pickSectionTitleFromText(text = "") {
   if (/(öppettider|telefon|e-handelsföretag|kundtjänst:)/.test(s)) 
     return "Företagsinformation";
   
+  // detta är Fallback för första meningen
   const first = (text || "").split("\n").map(x => x.trim()).find(Boolean) || "";
   return first.replace(/^\d+\.\s*/, "") || "TechNova - FAQ & Policydokument";
 }
 
+// konvertera dokument till kontextblock
 export function docsToContext(docs) {
   return docs.map((d, i) => {
     const n = i + 1;
@@ -63,6 +65,7 @@ export function historyToText (messages = [], maxTurns = 6) {
   return trimmed.map(m => `${m.role === "user" ? "KUND" : "AGENT"}: ${m.content}`).join("\n");
 }
 
+//man parserar använda etiketter från svaret
 export function parseUsedLabels(answer = "") {
   const matches = [...answer.matchAll(/\[#\d+(?:\s*,\s*#\d+)*\]/g)];
   const labels = new Set();
@@ -74,9 +77,10 @@ export function stripAnyModelSources(answer = "") {
   return answer.replace(/\n\s*Källor[\s\S]*$/i, "").trim();
 }
 
+//bygg källor-sektionen
 export function buildSources(answer = "", docs = []) {
   let labels = parseUsedLabels(answer);
-  if (!labels.length && docs.length) labels = ["#1"]; // fallback om modellen glömde citera
+  if (!labels.length && docs.length) labels = ["#1"];
   const titles = docs.map(d => d?.metadata?.title || pickSectionTitleFromText(d?.pageContent || ""));
   const pretty = labels.map(lbl => {
     const idx = Math.max(0, parseInt(lbl.slice(1), 10) - 1);
