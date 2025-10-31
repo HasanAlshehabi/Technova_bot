@@ -1,7 +1,7 @@
-.Jag lade till StringOutputParser för att få ut ren text från modellen. Utan den fick jag lite konstiga svar (ibland extra metadata eller format jag inte ville ha), och då blev efterbearbetningen krångligare än nödvändigt. 
-.Med parsern vet jag att jag alltid får en sträng, vilket gör det enkelt att rensa bort saker jag inte vill visa ex. om modellen råkar lägga till en egen “Källor” isektion.
-.plocka ut mina [#N]-citat på ett ställe, och sedan bygga källpanelen i UI:et på ett förutsägbart sätt.
-.Det här gör koden mycket tydligare, kedjan ansvarar för innehållet, och UI:t ansvarar för presentationen. 
-.Det blev också lättare att felsöka och testa. jag kan logga exakt den text som går vidare. 
-.Jag testade alternativ som att be modellen returnera JSON, men det blev mer överdrivet för en enkel kundtjänstbot. 
-StringOutputParser var det praktiska mellansteget som gjorde lösningen stabil och enkel 
+- Jag lade till StringOutputParser för att få ut ren text från modellen. Utan den fick jag lite konstiga svar (ibland extra metadata eller format jag inte ville ha), och då blev efterbearbetningen krångligare än nödvändigt. 
+- Med parsern vet jag att jag alltid får en sträng, vilket gör det enkelt att rensa bort saker jag inte vill visa ex. om modellen råkar lägga till en egen “Källor” isektion.
+- plocka ut mina [#N]-citat på ett ställe, och sedan bygga källpanelen i UI:et på ett förutsägbart sätt.
+- Det här gör koden mycket tydligare, kedjan ansvarar för innehållet, och UI:t ansvarar för presentationen. 
+- Det blev också lättare att felsöka och testa. jag kan logga exakt den text som går vidare. 
+- Jag testade alternativ som att be modellen returnera JSON, men det blev mer överdrivet för en enkel kundtjänstbot. 
+- StringOutputParser var det praktiska mellansteget som gjorde lösningen stabil och enkel 
