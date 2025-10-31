@@ -1,0 +1,22 @@
+.inputbar {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 12px;
+}
+.inputbar input {
+  padding: 12px;
+  border: 1px solid #d0d0d0;
+  border-radius: 10px;
+}
+.inputbar button {
+  padding: 12px 18px;
+  border: none;
+  background: #222;
+  color: #fff;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.inputbar button:disabled { 
+    opacity: 0.6; 
+    cursor: default; 
+}

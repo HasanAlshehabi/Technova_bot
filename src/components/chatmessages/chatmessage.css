@@ -1,0 +1,12 @@
+.msg { display: flex; margin: 6px 0; }
+.msg.left { justify-content: flex-start; }
+.msg.right { justify-content: flex-end; }
+.bubble {
+  max-width: 70ch;
+  background: #f4f4f4;
+  border: 1px solid #e5e5e5;
+  border-radius: 10px;
+  padding: 10px 12px;
+  white-space: pre-wrap;
+}
+.msg.right .bubble { background: #1b1b1b; color: white; }
