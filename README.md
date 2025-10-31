@@ -6,3 +6,5 @@
 - Det blev också lättare att felsöka och testa. jag kan logga exakt den text som går vidare. 
 - Jag testade alternativ som att be modellen returnera JSON, men det blev mer överdrivet för en enkel kundtjänstbot. 
 - StringOutputParser var det praktiska mellansteget som gjorde lösningen stabil och enkel 
+
+-SupaBase Table screenshot finns i Public 
